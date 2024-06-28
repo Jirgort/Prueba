@@ -1,0 +1,42 @@
+<nav class="nav-menu">
+    <ul>
+      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+      
+    </ul>
+  </nav>
+<div class="product-form-container">
+    
+    <h2>{{ productId ? 'Editar Producto' : 'Registrar Producto' }}</h2>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="codigo">Código</label>
+        <input id="codigo" formControlName="codigo" type="text">
+        <div *ngIf="productForm.get('codigo')?.errors?.['required'] && productForm.get('codigo')?.touched"
+             class="error-message">
+          El código es obligatorio.
+        </div>
+      </div>
+      <div>
+        <label for="nombre">Nombre</label>
+        <input id="nombre" formControlName="nombre" type="text">
+        <div *ngIf="productForm.get('nombre')?.errors?.['required'] && productForm.get('nombre')?.touched"
+             class="error-message">
+          El nombre es obligatorio.
+        </div>
+      </div>
+      <div>
+        <label for="precio">Precio</label>
+        <input id="precio" formControlName="precio" type="number">
+        <div *ngIf="productForm.get('precio')?.errors?.['required'] && productForm.get('precio')?.touched"
+             class="error-message">
+          El precio es obligatorio.
+        </div>
+        <div *ngIf="productForm.get('precio')?.errors?.['min'] && productForm.get('precio')?.touched"
+             class="error-message">
+          El precio debe ser un número positivo.
+        </div>
+      </div>
+      <button type="submit">{{ productId ? 'Actualizar' : 'Registrar' }}</button>
+    </form>
+  </div>
+  

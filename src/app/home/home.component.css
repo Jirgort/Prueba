@@ -1,0 +1,43 @@
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  .nav-menu {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-menu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .nav-menu ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .nav-menu ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+  }
+  
+  .nav-menu ul li a:hover {
+    background-color: #45a049;
+  }
+  
+  main {
+    margin-top: 20px;
+  }
+  

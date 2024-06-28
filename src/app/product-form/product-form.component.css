@@ -1,0 +1,67 @@
+.product-form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-form-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .product-form-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-form-container form > div {
+    margin-bottom: 15px;
+  }
+  
+  .product-form-container form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .product-form-container form input[type="text"],
+  .product-form-container form input[type="number"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 22px);
+  }
+  
+  .product-form-container form input[type="text"]:focus,
+  .product-form-container form input[type="number"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+  }
+  
+  .product-form-container form div.error-message {
+    color: #d9534f;
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+  
+  .product-form-container form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .product-form-container form button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+
+  

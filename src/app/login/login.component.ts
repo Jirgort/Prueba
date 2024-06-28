@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../Auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,10 +15,16 @@ export class LoginComponent {
 
   onSubmit() {
     const user = {correo: this.correo, clave: this.clave}
-    console.log(user)
     this.authService.login(user).subscribe(
-      (data) =>{
-       
+      success => {
+        if(success){
+          
+          this.router.navigate(['/home']);
+
+        }else{
+
+          alert("Login failed")
+        }
       }
     );
   }

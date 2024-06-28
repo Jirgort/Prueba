@@ -8,12 +8,23 @@ import { map, catchError } from 'rxjs/operators';
 })
 export class AuthService {
 
-  private apiUrl ="api/api/autenticacion/login"
+  private apiUrl ="http://181.193.1.114:89/api/api/autenticacion/login"
 
   constructor(private http: HttpClient) { }
 
-  login(user:any): Observable<any> {
+  login(user:any): Observable<boolean> {
     return this.http.post<any>(this.apiUrl, user)
+    .pipe(
+      map(response => {
+        if (response) {
+          localStorage.setItem('jwt', response);
+          return true;
+        } else {
+          return false;
+        }
+      }),
+      catchError(() => of(false))
+    );
      
   }
 
